@@ -292,7 +292,7 @@ BOOL checkAppStoreAvailable() {
 
 - (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue {
     if (self.restoreCompletionBlock) {
-        self.restoreCompletionBlock();
+        self.restoreCompletionBlock(queue.transactions);
     }
     self.restoreCompletionBlock = nil;
     self.restoreErrorBlock = nil;
